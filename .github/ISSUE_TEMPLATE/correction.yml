@@ -1,0 +1,47 @@
+name: Correction
+description: Something about a library is wrong or out of date
+title: "[Correction] <library>: <what is wrong>"
+labels: ["correction"]
+body:
+  - type: input
+    id: library
+    attributes:
+      label: Library
+      placeholder: e.g. QuestPDF
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Where is the problem?
+      description: File path or link to the line/table row
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What it says now
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What it should say
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: Link to vendor documentation, pricing page, changelog, NuGet listing or a reproducible run
+    validations:
+      required: true
+  - type: dropdown
+    id: vendor
+    attributes:
+      label: Are you affiliated with this library's vendor?
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true

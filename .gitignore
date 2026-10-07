@@ -1,0 +1,11 @@
+bin/
+obj/
+.vs/
+*.user
+# generated sample output
+*.pdf
+*.png
+!**/docs/**/*.png
+# never commit licence keys
+*.lic
+licenses.local.json
