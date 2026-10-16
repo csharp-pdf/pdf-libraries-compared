@@ -1,0 +1,4 @@
+{
+  "outputs": [ { "file": "output.pdf", "pages": 1, "pdfa": "2b", "text": ["Quarterly report", "Alpha", "Beta", "Gamma"] } ],
+  "notes": "QuestPDF writes PDF/A only for documents it builds, so the sample builds the T2 content as PDF/A-2b; it cannot convert invoice.pdf."
+}

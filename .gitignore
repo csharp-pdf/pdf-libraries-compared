@@ -9,3 +9,6 @@ obj/
 # never commit licence keys
 *.lic
 licenses.local.json
+!_inputs/*.pdf
+# browsers downloaded at run time (Docotic.Pdf's HtmlToPdf add-on)
+.local-chromium/

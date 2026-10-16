@@ -59,20 +59,23 @@ performance numbers come from a public harness you can run yourself:
 | T13 | ASP.NET Core endpoint that returns a PDF |
 | T14 | Linux / Docker deployment |
 
+Every library page links one sample per task; how samples are written and checked (including the checker,
+[`tools/check_samples.py`](tools/check_samples.py)) is in [`_template/SAMPLES.md`](_template/SAMPLES.md).
+
 ## Libraries
 
 | Library | Type |
 |---|---|
-| ABCpdf | HTML to PDF + PDF library |
-| Docotic.Pdf (with the HtmlToPdf add-on) | PDF library + HTML add-on |
-| IronPDF | HTML to PDF + PDF library |
-| iText (with pdfHTML) | PDF library + HTML add-on |
-| PDFsharp / MigraDoc | PDF library / document layout |
-| Playwright for .NET | Headless browser automation |
-| PuppeteerSharp | Headless browser automation |
-| QuestPDF | Code-first PDF generation |
-| SelectPdf | HTML to PDF + PDF library, REST API |
-| wkhtmltopdf (Haukcode.WkHtmlToPdfDotNet, a DinkToPdf fork) | HTML to PDF (wkhtmltopdf wrapper) |
+| [ABCpdf](abcpdf/) | HTML to PDF + PDF library |
+| [Docotic.Pdf](docotic/) (with the HtmlToPdf add-on) | PDF library + HTML add-on |
+| [IronPDF](ironpdf/) | HTML to PDF + PDF library |
+| [iText](itext/) (with pdfHTML) | PDF library + HTML add-on |
+| [PDFsharp / MigraDoc](pdfsharp/) | PDF library / document layout |
+| [Playwright for .NET](playwright/) | Headless browser automation |
+| [PuppeteerSharp](puppeteersharp/) | Headless browser automation |
+| [QuestPDF](questpdf/) | Code-first PDF generation |
+| [SelectPdf](selectpdf/) | HTML to PDF + PDF library, REST API |
+| [wkhtmltopdf](wkhtmltopdf/) (Haukcode.WkHtmlToPdfDotNet, a DinkToPdf fork) | HTML to PDF (wkhtmltopdf wrapper) |
 
 Don't see the library you use? [Request it](https://github.com/csharp-pdf/pdf-libraries-compared/issues/new?template=add-library.yml).
 

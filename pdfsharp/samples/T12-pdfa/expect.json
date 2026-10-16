@@ -1,0 +1,1 @@
+{"outputs": [{"file": "output.pdf", "pdfa": "1a", "text": ["Quarterly report", "Alpha", "Beta", "Gamma"]}], "notes": "PDFsharp's SetPdfA() has no level parameter (docs: Archiving - PDF/A); the file it writes declares PDF/A-1a (pdfaid part 1, conformance A) and is validated against that level."}
