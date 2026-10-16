@@ -8,8 +8,8 @@ Thanks for helping keep these comparisons accurate.
   NuGet listing, changelog or a reproducible run, and add the date you checked it
   (`verified YYYY-MM-DD`). Claims without a source are not merged.
 - **Samples must compile and run.** Each sample is a console project targeting
-  `net8.0` unless the library cannot. CI builds and runs it; a sample that does not
-  produce the expected output is not merged.
+  `net8.0` unless the library cannot. Every sample is built and run before it is
+  merged; one that does not produce the expected output is not merged.
 - **Use the library the way its vendor recommends.** If a sample is slow or wrong
   because it is configured badly, that is a bug in the sample — please fix it.
 - **No ratings or marketing language.** Describe what a library does and link the

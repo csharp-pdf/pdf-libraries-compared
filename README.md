@@ -20,6 +20,7 @@ performance numbers come from a public harness you can run yourself:
 - [How libraries are compared](#how-libraries-are-compared)
 - [The standard task set](#the-standard-task-set)
 - [Libraries](#libraries)
+- [Benchmark results](#benchmark-results)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -28,8 +29,8 @@ performance numbers come from a public harness you can run yourself:
 1. **Same tasks for everyone.** Each library gets one sample per task in
    [the standard task set](#the-standard-task-set). A task a library cannot do is
    marked *not supported*, with a link to the source that says so — never left blank.
-2. **Samples are real.** Every sample is a compilable console project. CI builds
-   and runs it and checks the output (the PDF opens, has the expected page count,
+2. **Samples are real.** Every sample is a compilable console project. Each one is
+   built and run, and its output is checked (the PDF opens, has the expected page count,
    contains the expected text).
 3. **Facts are sourced and dated.** Licence, price, platforms, frameworks and
    versions link to the vendor's own page or the NuGet listing, with the date
@@ -62,7 +63,8 @@ performance numbers come from a public harness you can run yourself:
 
 | Library | Type |
 |---|---|
-| Aspose.PDF | PDF library |
+| ABCpdf | HTML to PDF + PDF library |
+| Docotic.Pdf (with the HtmlToPdf add-on) | PDF library + HTML add-on |
 | IronPDF | HTML to PDF + PDF library |
 | iText (with pdfHTML) | PDF library + HTML add-on |
 | PDFsharp / MigraDoc | PDF library / document layout |
@@ -70,10 +72,20 @@ performance numbers come from a public harness you can run yourself:
 | PuppeteerSharp | Headless browser automation |
 | QuestPDF | Code-first PDF generation |
 | SelectPdf | HTML to PDF + PDF library, REST API |
-| Spire.PDF | PDF library |
-| wkhtmltopdf via DinkToPdf | HTML to PDF (wkhtmltopdf wrapper) |
+| wkhtmltopdf (Haukcode.WkHtmlToPdfDotNet, a DinkToPdf fork) | HTML to PDF (wkhtmltopdf wrapper) |
 
 Don't see the library you use? [Request it](https://github.com/csharp-pdf/pdf-libraries-compared/issues/new?template=add-library.yml).
+
+## Benchmark results
+
+- [2026-10-15](benchmarks/2026-10-15.md) — all ten libraries above at their latest versions, on Windows and on
+  Linux: HTML to PDF speed, cold start, throughput, memory and stability, output correctness and fidelity, PDF/A and
+  PDF/UA output validated with veraPDF, PDF/X, working with existing PDFs and Word files, errors and timeouts,
+  and Docker deployment.
+
+Each page is generated from the raw data in
+[csharp-pdf/pdf-benchmarks](https://github.com/csharp-pdf/pdf-benchmarks); the harness and fixtures are there, so
+any result can be re-run.
 
 ## Contributing
 
