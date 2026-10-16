@@ -109,3 +109,4 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
 - Documentation: https://ironpdf.com/docs/
 - NuGet: https://www.nuget.org/packages/IronPdf/
 - Source repository: not open source
+- Migration guide to SelectPdf (written by SelectPdf): https://github.com/selectpdf/migrate-to-selectpdf/tree/main/from-ironpdf

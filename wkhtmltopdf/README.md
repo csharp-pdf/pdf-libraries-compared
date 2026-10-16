@@ -110,3 +110,4 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
 - Documentation: <https://github.com/HakanL/WkHtmlToPdf-DotNet#readme> (wrapper), <https://wkhtmltopdf.org/usage/wkhtmltopdf.txt> (wkhtmltopdf manual)
 - NuGet: <https://www.nuget.org/packages/Haukcode.WkHtmlToPdfDotNet>
 - Source repository: <https://github.com/HakanL/WkHtmlToPdf-DotNet> (wrapper), <https://github.com/wkhtmltopdf/wkhtmltopdf> (wkhtmltopdf, archived)
+- Migration guide to SelectPdf (written by SelectPdf): https://github.com/selectpdf/migrate-to-selectpdf/tree/main/from-wkhtmltopdf

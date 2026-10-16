@@ -120,3 +120,4 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
 - Documentation: https://playwright.dev/dotnet/docs/intro, `page.PdfAsync`: https://playwright.dev/dotnet/docs/api/class-page#page-pdf
 - NuGet: https://www.nuget.org/packages/Microsoft.Playwright/
 - Source repository: https://github.com/microsoft/playwright-dotnet
+- Migration guide to SelectPdf (written by SelectPdf): https://github.com/selectpdf/migrate-to-selectpdf/tree/main/from-playwright

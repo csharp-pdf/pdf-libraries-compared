@@ -102,3 +102,4 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
 - Official samples: https://github.com/itext/itext-publications-samples-dotnet
 - NuGet: https://www.nuget.org/packages/itext, https://www.nuget.org/packages/itext.pdfhtml
 - Source repository: https://github.com/itext/itext-dotnet (iText Core), https://github.com/itext/i7n-pdfhtml (pdfHTML)
+- Migration guide to SelectPdf (written by SelectPdf): https://github.com/selectpdf/migrate-to-selectpdf/tree/main/from-itext

@@ -121,3 +121,4 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
 - Documentation: https://www.puppeteersharp.com/api/index.html, examples: https://www.puppeteersharp.com/docs/index.html
 - NuGet: https://www.nuget.org/packages/PuppeteerSharp/
 - Source repository: https://github.com/hardkoded/puppeteer-sharp
+- Migration guide to SelectPdf (written by SelectPdf): https://github.com/selectpdf/migrate-to-selectpdf/tree/main/from-puppeteersharp
