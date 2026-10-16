@@ -17,7 +17,7 @@ add-on ([NuGet description](https://www.nuget.org/packages/BitMiracle.Docotic.Pd
 | Latest version | 9.9.19928 (stable; later `9.9.2xxxx-dev` builds are pre-releases) | [nuget.org](https://www.nuget.org/packages/BitMiracle.Docotic.Pdf/) | 2026-10-16 |
 | Target frameworks | netstandard2.0 (the vendor lists .NET 5 to .NET 10, .NET Core 2.0+ and .NET Framework 4.6.1+) | [nuget.org Frameworks](https://www.nuget.org/packages/BitMiracle.Docotic.Pdf/9.9.19928#supportedframeworks-body-tab), [HTML to PDF for .NET](https://bitmiracle.com/pdf-library/html-pdf/) | 2026-10-16 |
 | Operating systems | Licences cover Windows, Linux, macOS, Android and iOS; HTML to PDF on Windows, macOS and Linux, and in Windows and Linux Docker containers | [Licences](https://bitmiracle.com/pdf-library/licenses/), [HTML to PDF for .NET](https://bitmiracle.com/pdf-library/html-pdf/) | 2026-10-16 |
-| Rendering engine (HTML to PDF) | Chromium: the add-on uses a compatible Google Chrome build in the `.local-chromium` folder and downloads it there when missing | [HTML to PDF for .NET](https://bitmiracle.com/pdf-library/html-pdf/) | 2026-10-16 |
+| Rendering engine (HTML to PDF) | Chromium: the add-on uses a compatible Google Chrome build in the `.local-chromium` folder and downloads it there when missing; 9.9.19928 uses Chromium 147.0.7727.57 (`HtmlEngineOptions.ChromiumRevision`), stable since 2026-04-07 | [HTML to PDF for .NET](https://bitmiracle.com/pdf-library/html-pdf/), [Chromium 147 schedule](https://chromiumdash.appspot.com/fetch_milestone_schedule?mstone=147) | 2026-10-16 |
 | Native dependencies | None for the core library and the Conformance add-on (managed netstandard2.0 assemblies); the HtmlToPdf add-on runs the downloaded Chromium, which on Linux needs Chromium's OS libraries (`apt-get -y install chromium` on Debian) | [nuget.org](https://www.nuget.org/packages/BitMiracle.Docotic.Pdf/9.9.19928#dependencies-body-tab), [Convert HTML to PDF in Azure](https://bitmiracle.com/pdf-library/html-pdf/convert-in-azure) | 2026-10-16 |
 | Latest release date | 2026-05-15 (9.9.19928) | [nuget.org](https://www.nuget.org/packages/BitMiracle.Docotic.Pdf/9.9.19928) | 2026-10-16 |
 
@@ -80,9 +80,10 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
   required`; `LicenseManager.HasValidLicense` tells whether a valid key was applied. Bit Miracle recommends adding
   the key once at start-up (in `Program.cs` for ASP.NET Core). The free key lasts 31 days and is for evaluation
   only. ([Trial restrictions](https://bitmiracle.com/pdf-library/trial-restrictions),
-  [Licence troubleshooting](https://bitmiracle.com/pdf-library/licenses/troubleshooting))
+  [Licence troubleshooting](https://bitmiracle.com/pdf-library/licenses/troubleshooting),
+  [AddLicenseData](https://api.docotic.com/licensemanager-addlicensedata))
 - **Licence types follow the deployment.** Application covers one desktop or mobile application, Server one
-  production server (bound to the server's ID); serverless, autoscaling and SDK/API use need Ultimate.
+  production server (bound to the server's ID); serverless, autoscaling and SDK/API use need Ultimate or Ultimate+.
   ([Licences](https://bitmiracle.com/pdf-library/licenses/))
 - **Chromium is downloaded at run time.** The first conversion downloads a Chrome build into `HtmlEngineOptions.Path`, by default `.local-chromium` under the current directory, so the
   process needs network access and a writable folder; `Path` can point to a shared or pre-filled folder. Apps run
@@ -90,8 +91,8 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
   ([HTML to PDF for .NET](https://bitmiracle.com/pdf-library/html-pdf/),
   [Convert HTML to PDF in Azure](https://bitmiracle.com/pdf-library/html-pdf/convert-in-azure))
 - **Containers need the Chromium sandbox off.** In Docker, Bit Miracle installs the `chromium` package (for its
-  dependencies) and sets `HtmlEngineOptions.UseSandbox = false`; otherwise Chromium fails with "Running as root
-  without --no-sandbox is not supported". The T02 and T13 samples turn the sandbox off only when
+  dependencies) and disables the Chromium sandbox with `HtmlEngineOptions.UseSandbox = false`; without it, Chromium running as root fails
+  with "Running as root without --no-sandbox is not supported" (the error Bit Miracle shows for Azure on Linux). The T02 and T13 samples turn the sandbox off only when
   `DOTNET_RUNNING_IN_CONTAINER` is `true` (set by the official .NET images).
   ([Convert HTML to PDF in Azure](https://bitmiracle.com/pdf-library/html-pdf/convert-in-azure))
 - **Azure App Service and Functions on Windows** cannot run the add-on's Chromium ("side-by-side configuration is
@@ -99,9 +100,11 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
 - **The HTML API is asynchronous only.** From synchronous code Bit Miracle shows
   `Task.Run(async () => ...).GetAwaiter().GetResult()` and advises using it only when there is no other choice.
   ([Convert HTML to PDF](https://bitmiracle.com/pdf-library/html-pdf/convert#sync-code))
-- **Header and footer templates** do not load external resources: use inline styles and data URIs, and set top and
-  bottom margins so the templates are not covered (the default margins are 0).
-  ([Convert HTML to PDF](https://bitmiracle.com/pdf-library/html-pdf/convert#header-footer))
+- **Header and footer templates**: "The conversion engine won't wait for external resources to load", so Bit Miracle
+  recommends inline styles and data URIs for images. The templates are drawn inside the page margins, which default
+  to 0, so set the top and bottom margins explicitly.
+  ([Convert HTML to PDF](https://bitmiracle.com/pdf-library/html-pdf/convert#header-footer); the `PdfPageOptions`
+  IntelliSense docs in the package)
 - **Wide layouts**: Bit Miracle's way to fit a wide page is a larger PDF page size or `Page.Scale`.
   ([Convert HTML to PDF](https://bitmiracle.com/pdf-library/html-pdf/convert#custom-page-settings))
 

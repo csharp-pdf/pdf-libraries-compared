@@ -78,7 +78,8 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
   existing documents cannot be converted, and a `UAManager` must be created for tagging
   ([Archiving - PDF/A](https://docs.pdfsharp.net/PDFsharp/Topics/PDF-Features/Archiving.html)). The file written by
   6.5.0 declares PDF/A-1a and passes veraPDF at that level ([T12 sample](samples/T12-pdfa/expect.json)).
-- **AcroForms: limited support.** ([PDFsharp FAQ](https://docs.pdfsharp.net/PDFsharp/Overview/FAQ.html)) In the T8
+- **AcroForms: limited support.** The FAQ (written for 6.1) says "There is limited support for AcroForms"
+  ([PDFsharp FAQ](https://docs.pdfsharp.net/PDFsharp/Overview/FAQ.html)). In the T8
   sample the stored values are correct, but the combo box keeps showing its old appearance ("Free") after
   `Value` is set to "Pro".
 - **Signatures need PdfSharp.Cryptography.** `PdfSharpDefaultSigner` lives in the separate `PdfSharp.Cryptography`

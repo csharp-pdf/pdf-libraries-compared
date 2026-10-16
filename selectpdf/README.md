@@ -16,7 +16,7 @@ with an HTML to PDF converter built on Chromium and a Word to PDF converter
 | Latest version | 26.5.0 | [nuget.org](https://www.nuget.org/packages/SelectPdf.Universal/) | 2026-10-16 |
 | Target frameworks | netstandard2.0, net8.0, net10.0 (usable from .NET Framework 4.6.1+, .NET Core 2.0+, .NET 5 to .NET 10) | [nuget.org Frameworks](https://www.nuget.org/packages/SelectPdf.Universal/26.5.0#supportedframeworks-body-tab), [Installation](https://selectpdf.com/pdf-library/html/Installation.htm) | 2026-10-16 |
 | Operating systems | Windows (x64, x86), Linux (x64, ARM64; glibc 2.30 or later), macOS 13+ on Apple Silicon | [Installation](https://selectpdf.com/pdf-library/html/Installation.htm), [SelectPdf.Universal.Linux](https://www.nuget.org/packages/SelectPdf.Universal.Linux/26.5.0) | 2026-10-16 |
-| Rendering engine (HTML to PDF) | Chromium (CEF), shipped in the Native package | [Installation](https://selectpdf.com/pdf-library/html/Installation.htm) | 2026-10-16 |
+| Rendering engine (HTML to PDF) | Chromium (CEF), shipped in the Native package. 26.5.0: Chromium 154.0.8037.58 (CEF 154.0.28, the version of `libcef` in `SelectPdf.Universal.Native.win-x64` and `.linux-x64`); Chromium 154 reached stable on 2026-09-22 | [Installation](https://selectpdf.com/pdf-library/html/Installation.htm), [Chromium 154 schedule](https://chromiumdash.appspot.com/fetch_milestone_schedule?mstone=154) | 2026-10-16 |
 | Native dependencies | The per-platform Native package (Chromium engine and a native PDF tool used for PDF to text and PDF to image). On Linux no OS packages are installed: the Native package bundles the Chromium libraries. | [Installation](https://selectpdf.com/pdf-library/html/Installation.htm), [Deployment with Docker](https://selectpdf.com/pdf-library/html/Deployment-Docker.htm) | 2026-10-16 |
 | Latest release date | 2026-10-15 | [nuget.org](https://www.nuget.org/packages/SelectPdf.Universal/26.5.0) | 2026-10-16 |
 
@@ -97,7 +97,8 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
   only convert through the separate remote engine container. Base images have no fonts and the built-in fonts cover
   Latin, Greek and Cyrillic only; `SelectPdf.Universal.Fonts` adds Noto fonts for other scripts.
   ([Deployment with Docker](https://selectpdf.com/pdf-library/html/Deployment-Docker.htm),
-  [Remote Engine](https://selectpdf.com/pdf-library/html/Remote-Engine.htm))
+  [Remote Engine](https://selectpdf.com/pdf-library/html/Remote-Engine.htm),
+  [SelectPdf.Universal.Linux on NuGet](https://www.nuget.org/packages/SelectPdf.Universal.Linux/26.5.0))
 - **Windows containers** need a Windows Server Core image with the core Windows fonts installed; Nano Server is not
   supported. ([Deployment with Docker](https://selectpdf.com/pdf-library/html/Deployment-Docker.htm))
 - **macOS** is supported on Apple Silicon only; on an Intel Mac, HTML to PDF, PDF to text and PDF to image are

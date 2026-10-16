@@ -101,7 +101,7 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
   [IConverter.cs](https://github.com/HakanL/WkHtmlToPdf-DotNet/blob/master/src/WkHtmlToPdf-DotNet/Contracts/IConverter.cs)).
 - **DinkToPdf.** The original `DinkToPdf` package (last release 1.0.8, 2017-04-18) does not bundle the native
   library; its README says to copy it into the project ([DinkToPdf](https://github.com/rdvojmoc/DinkToPdf#readme)).
-  This fork keeps the same API under the `WkHtmlToPdfDotNet` namespace and bundles the natives
+  This fork's main changes are the bundled natives and the new name (namespace `WkHtmlToPdfDotNet`)
   ([README, Fork](https://github.com/HakanL/WkHtmlToPdf-DotNet#fork), [DinkToPdf on nuget.org](https://www.nuget.org/packages/DinkToPdf)).
 
 ## Links

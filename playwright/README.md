@@ -87,8 +87,8 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
 
 - **The browser is a separate download.** Browsers go to `%USERPROFILE%\AppData\Local\ms-playwright` on Windows,
   `~/Library/Caches/ms-playwright` on macOS and `~/.cache/ms-playwright` on Linux, or to `PLAYWRIGHT_BROWSERS_PATH`.
-  They "take a few hundred megabytes of disk space", and each Playwright version needs its own browser build, so
-  `install` has to run again after an upgrade.
+  They "take a few hundred megabytes of disk space", and each Playwright release updates the browser versions it
+  supports, so after an upgrade `install` may have to run again.
   ([Managing browser binaries](https://playwright.dev/dotnet/docs/browsers#managing-browser-binaries))
 - **`install chromium` downloads two builds**: the full Chromium build and the Chromium headless shell, which a
   headless launch uses by default. `--only-shell` skips the full build when only headless mode is used; the
@@ -103,8 +103,8 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
   are not visible inside templates"; page numbers come from elements with the classes `pageNumber` and
   `totalPages`. With the default zero margins there is no room for them, so the T5 sample sets top and bottom
   margins. ([page.PdfAsync](https://playwright.dev/dotnet/docs/api/class-page#page-pdf))
-- **Linux needs system packages.** `install-deps` (or `install --with-deps`) installs them; behind a proxy run it
-  as root. ([Install system dependencies](https://playwright.dev/dotnet/docs/browsers#install-system-dependencies))
+- **Linux needs system packages.** `install-deps` (or `install --with-deps`) installs them.
+  ([Install system dependencies](https://playwright.dev/dotnet/docs/browsers#install-system-dependencies))
 - **Docker image.** `mcr.microsoft.com/playwright/dotnet:v1.63.0-noble` contains the browsers and their system
   dependencies but not the Playwright package; its tag must match the package version. It is built on .NET 10, so
   the T14 Dockerfile adds the .NET 8 runtime with the install script shown on the Docker page. The page recommends

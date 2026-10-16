@@ -16,7 +16,7 @@ PDF conversion through a Chrome-based rendering engine
 | Latest version | 2026.10.3 | [nuget.org](https://www.nuget.org/packages/IronPdf/) | 2026-10-16 |
 | Target frameworks | netstandard2.0 (`IronPdf.Slim` also ships a .NET Framework 4.6.2 build); the README lists .NET 5 to .NET 10, .NET Core 2.x/3.x and .NET Framework 4.6.2+ | [nuget.org Frameworks](https://www.nuget.org/packages/IronPdf/2026.10.3#supportedframeworks-body-tab), [IronPdf.Slim](https://www.nuget.org/packages/IronPdf.Slim/2026.10.3#supportedframeworks-body-tab) | 2026-10-16 |
 | Operating systems | Windows, macOS, Linux (Debian, CentOS, Ubuntu); Docker, Azure, AWS | [nuget.org README](https://www.nuget.org/packages/IronPdf/2026.10.3) | 2026-10-16 |
-| Rendering engine (HTML to PDF) | Chrome-based (`ChromePdfRenderer`) | [nuget.org README](https://www.nuget.org/packages/IronPdf/2026.10.3) | 2026-10-16 |
+| Rendering engine (HTML to PDF) | Chrome-based (`ChromePdfRenderer`). 2026.10.3: Chromium 109.0.5414.120 (CEF 109.1.18, the version of `libcef` in `IronPdf.Native.Chrome.Windows` and `.Linux` 2026.10.6); Chromium 109 reached stable on 2023-01-10 | [nuget.org README](https://www.nuget.org/packages/IronPdf/2026.10.3), [Chromium 109 schedule](https://chromiumdash.appspot.com/fetch_milestone_schedule?mstone=109) | 2026-10-16 |
 | Native dependencies | The `IronPdf.Native.Chrome.*` and `IronSoftware.Native.PdfModel*` packages; on Linux also the OS packages listed in the Docker guide (or installed at run time by `Installation.LinuxAndDockerDependenciesAutoConfig`) | [nuget.org](https://www.nuget.org/packages/IronPdf/2026.10.3), [Docker guide](https://ironpdf.com/get-started/ironpdf-docker/) | 2026-10-16 |
 | Latest release date | 2026-10-12 | [nuget.org](https://www.nuget.org/packages/IronPdf/2026.10.3) | 2026-10-16 |
 
@@ -79,14 +79,14 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
   "IronPdf is running in production without a license", with the note "Development use: Free for 7 days"
   (reproduced with [T01-hello-world](samples/T01-hello-world) and no `IRONPDF_LICENSE_KEY`, 2026-10-16). A free
   30-day trial key works. ([Licence keys](https://ironpdf.com/get-started/license-keys/))
-- **Licences are counted per developer, location and project** (Lite: 1 / 1 / 1); royalty-free OEM redistribution
-  (commercial software and paid SaaS) is available at extra cost on the Lite, Plus and Professional licences.
+- **Licences are counted per developer, location and project** (Lite: 1 / 1 / 1); OEM, SaaS and software
+  royalty-free redistribution is an add-on, USD 1,999, offered with every licence (Unlimited included).
   ([Licensing](https://ironpdf.com/licensing/))
 - **Linux packages.** IronPDF recommends `IronPdf.Linux` in containers to save disk space and avoid downloading
   assets at start-up. Its Docker guide installs a list of Chromium dependencies with `apt-get` (on Ubuntu 24.04 the
   names carry the `t64` suffix, e.g. `libasound2t64`) and, with them, sets
-  `Installation.LinuxAndDockerDependenciesAutoConfig = false` and
-  `Installation.ChromeGpuMode = ChromeGpuModes.Disabled`.
+  `Installation.LinuxAndDockerDependenciesAutoConfig = false`. GPU acceleration "is disabled by default"; the guide
+  sets `Installation.ChromeGpuMode = ChromeGpuModes.Disabled` only where it was turned on.
   ([Docker guide](https://ironpdf.com/get-started/ironpdf-docker/))
 - **Alpine Linux is not supported directly**; the Docker guide points to the separate
   `ironsoftwareofficial/ironpdfengine` container used from an app with the `IronPdf.Slim` package.
