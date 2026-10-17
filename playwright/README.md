@@ -73,7 +73,7 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
 | HTML to PDF, median per page (Windows) | 101–1,417 ms over 18 pages; geometric mean 280 ms |
 | Cold start (Windows) | 823 ms |
 | Throughput, conversions/min, 1 / 8 at once (Windows) | 223 / 1,167 (sync); 208 / 1,205 (async) |
-| Memory over 1,000 conversions (Windows) | 276 → 302 MB, 1 failures |
+| Memory over 1,000 conversions (Windows) | 276 → 302 MB, 1 failure |
 | HTML to PDF, median per page (Linux) | 51–1,099 ms over 18 pages; geometric mean 108 ms |
 | Cold start (Linux) | 771 ms |
 | Throughput, conversions/min, 1 / 8 at once (Linux) | 603 / 2,080 (sync); 524 / 2,490 (async) |
