@@ -80,7 +80,8 @@ From the [2026-10-15 run](../benchmarks/2026-10-15.md) (Windows and Linux on the
   (reproduced with [T01-hello-world](samples/T01-hello-world) and no `IRONPDF_LICENSE_KEY`, 2026-10-16). A free
   30-day trial key works. ([Licence keys](https://ironpdf.com/get-started/license-keys/))
 - **Licences are counted per developer, location and project** (Lite: 1 / 1 / 1); OEM, SaaS and software
-  royalty-free redistribution is an add-on, USD 1,999, offered with every licence (Unlimited included).
+  royalty-free redistribution is an add-on, USD 1,999, offered with the Plus, Professional and Unlimited licences but
+  not with Lite (read 2026-10-22).
   ([Licensing](https://ironpdf.com/licensing/))
 - **Linux packages.** IronPDF recommends `IronPdf.Linux` in containers to save disk space and avoid downloading
   assets at start-up. Its Docker guide installs a list of Chromium dependencies with `apt-get` (on Ubuntu 24.04 the
